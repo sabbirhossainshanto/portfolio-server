@@ -16,10 +16,6 @@ const signupUserValidationSchema = z.object({
       required_error: 'Password is required!',
       message: 'Password should be in string!',
     }),
-    confirmPassword: z.string({
-      required_error: 'Confirm password is required!',
-      message: 'Confirm password should be in string!',
-    }),
     phone: z.string({
       required_error: 'phone number is required!',
       message: 'phone number should be in string!',
@@ -28,7 +24,7 @@ const signupUserValidationSchema = z.object({
       required_error: 'Address is required!',
       message: 'Address should be in string!',
     }),
-    role: z.enum(['admin', 'user']),
+    role: z.enum(['ADMIN']),
   }),
 });
 
@@ -47,14 +43,7 @@ const loginUserValidationSchema = z.object({
   }),
 });
 
-const userRoleUpdateValidationSchema = z.object({
-  body: z.object({
-    role: z.enum(['user', 'admin']),
-  }),
-});
-
 export const userValidation = {
   signupUserValidationSchema,
   loginUserValidationSchema,
-  userRoleUpdateValidationSchema,
 };

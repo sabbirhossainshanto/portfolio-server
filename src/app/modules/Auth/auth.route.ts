@@ -5,11 +5,11 @@ import { authController } from './auth.controller';
 
 const router = express.Router();
 
-router.post(
-  '/signup',
-  validateRequest(userValidation.signupUserValidationSchema),
-  authController.signupUser,
-);
+// router.post(
+//   '/signup',
+//   validateRequest(userValidation.signupUserValidationSchema),
+//   authController.signupUser,
+// );
 router.post(
   '/login',
   validateRequest(userValidation.loginUserValidationSchema),

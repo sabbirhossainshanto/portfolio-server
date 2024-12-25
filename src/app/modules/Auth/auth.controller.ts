@@ -15,14 +15,12 @@ const signupUser = catchAsync(async (req, res) => {
 
 const loginUser = catchAsync(async (req, res) => {
   const result = await authService.loginUser(req.body);
-  const { accessToken, user } = result;
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'User logged in successfully!',
-    token: accessToken,
-    data: user,
+    data: result,
   });
 });
 

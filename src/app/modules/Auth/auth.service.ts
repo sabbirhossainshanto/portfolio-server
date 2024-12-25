@@ -6,9 +6,6 @@ import { createToken } from '../user/user.utils';
 import { User } from '../user/user.model';
 
 const signupUser = async (payload: TUser) => {
-  if (payload.password !== payload.confirmPassword) {
-    throw new AppError(httpStatus.BAD_REQUEST, 'Password did not matched!');
-  }
   const result = await User.create(payload);
   return result;
 };
@@ -33,8 +30,14 @@ const loginUser = async (payload: TLoginUser) => {
     config.JWT_ACCESS_SECRET as string,
     config.JWT_ACCESS_EXPIRES_IN as string,
   );
+  const refreshToken = createToken(
+    userData,
+    config.JWT_REFRESH_SECRET as string,
+    config.JWT_REFRESH_EXPIRES_IN as string,
+  );
 
   return {
+    refreshToken,
     accessToken,
     user,
   };
