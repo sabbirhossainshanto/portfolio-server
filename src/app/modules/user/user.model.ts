@@ -9,6 +9,10 @@ const userSchema = new Schema<TUser>({
     type: String,
     required: true,
   },
+  profilePhoto: {
+    type: String,
+    required: true,
+  },
   email: {
     type: String,
     required: true,

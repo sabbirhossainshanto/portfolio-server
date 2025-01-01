@@ -9,6 +9,7 @@ export interface TUser {
   phone: string;
   address: string;
   role: 'ADMIN';
+  profilePhoto: string;
 }
 
 export type TLoginUser = {

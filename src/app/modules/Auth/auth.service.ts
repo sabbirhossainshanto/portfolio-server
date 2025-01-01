@@ -23,6 +23,7 @@ const loginUser = async (payload: TLoginUser) => {
     email: user.email,
     role: user.role,
     name: user.name,
+    profilePhoto: user?.profilePhoto,
   };
 
   const accessToken = createToken(

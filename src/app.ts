@@ -12,10 +12,11 @@ app.use(
   cors({
     credentials: true,
     origin: [
+      'https://sabbir-protfolio-dashboard.vercel.app',
+      'http://localhost:3001',
       'http://localhost:5174',
+      'https://sabbir-portfolio.netlify.app',
       'http://localhost:5173',
-      'http://localhost:5175',
-      'https://meeting-room-booking-gules.vercel.app',
     ],
   }),
 );

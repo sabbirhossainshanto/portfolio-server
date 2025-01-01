@@ -11,6 +11,7 @@ const createProject = async (file: Express.Multer.File, payload: IProject) => {
     payload.image = secure_url;
   }
   const result = await Project.create(payload);
+
   return result;
 };
 
