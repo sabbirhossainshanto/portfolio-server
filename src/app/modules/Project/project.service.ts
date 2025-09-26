@@ -16,7 +16,7 @@ const createProject = async (file: Express.Multer.File, payload: IProject) => {
 };
 
 const getAllProject = async () => {
-  return await Project.find();
+  return await Project.find().sort({ sort: 1 });
 };
 
 const getSingleProject = async (id: string) => {
